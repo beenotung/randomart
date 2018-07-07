@@ -7,6 +7,62 @@ creating OpenSSH keys or connecting to OpenSSH servers.
 
 Using 'Drunken Bishop' algorithm.
 
+== Example
+
+```
++-----------------+
+|       +o.+o.    |
+|      o oo.&.    |
+|     o .+ & B.   |
+|      .o X B.    |
+|      . S +...   |
+|       + ..oo . .|
+|      . . .o . o |
+|         .  oo=  |
+|           .o=o=E|
++----[SHA256]-----+
+```
+
+== Specification
+
+Grid of size 17 x 9
+
+For each two bit of input, interpret as Movement Code
+
+.Movement Code
+|===
+| code | Direction
+
+| 00 | North-West
+| 01 | North-East
+| 10 | South-West
+| 11 | South-East
+|===
+
+.Frequency Representation
+|===
+| Occupancy | Character
+
+| 0 | .
+| 1 | o
+| 2 | +
+| 3 | =
+| 4 | *
+| 5 | B
+| 6 | O
+| 7 | X
+| 8 | @
+| 9 | %
+| 10 | &
+| 11 | #
+| 12 | /
+| 13 | ^
+|===
+
+Starting Point marked as `S`.
+
+Ending Point marked as `E`.
+
 == Reference
 
 link:https://pthree.org/2013/05/30/openssh-keys-and-the-drunken-bishop/[Aaron Toponce : OpenSSH Keys and The Drunken Bishop]
