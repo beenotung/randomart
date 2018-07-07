@@ -1,0 +1,12 @@
+= randomart
+
+File-based randomart generator
+
+The "randomart" or "visual fingerprint" shown when
+creating OpenSSH keys or connecting to OpenSSH servers.
+
+Using 'Drunken Bishop' algorithm.
+
+== Reference
+
+link:https://pthree.org/2013/05/30/openssh-keys-and-the-drunken-bishop/[Aaron Toponce : OpenSSH Keys and The Drunken Bishop]
