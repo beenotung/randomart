@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+erlc randomart.erl
+./main.escript randomart.erl
