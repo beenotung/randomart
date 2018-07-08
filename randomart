@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-file="$PWD/$(dirname $1)/$1"
+file="$PWD/$(dirname $1)/$(basename $1)"
 cd $(dirname $(ls -l $(type -p $0) | awk '{print $NF}'))
 if [ ! -f randomart.beam ]; then
   erlc randomart.erl
