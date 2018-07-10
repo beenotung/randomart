@@ -151,7 +151,7 @@ format_cells([Freq | T], Start, End, Acc, Idx) ->
     end,
   format_cells(T, Start, End, New_Acc, Idx + 1).
 
-freq_to_char(Freq) ->
+freq_to_char(Freq) when Freq >= 0 ->
   case Freq of
     0 -> $ ;
     1 -> $.;
@@ -167,5 +167,5 @@ freq_to_char(Freq) ->
     11 -> $&;
     12 -> $#;
     13 -> $/;
-    14 -> $^
+    _  -> $^
   end.
