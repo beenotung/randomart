@@ -43,20 +43,22 @@ For each two bit of input, interpret as Movement Code
 |===
 | Occupancy | Character
 
-| 0 | .
-| 1 | o
-| 2 | +
-| 3 | =
-| 4 | *
-| 5 | B
-| 6 | O
-| 7 | X
-| 8 | @
-| 9 | %
-| 10 | &
-| 11 | #
-| 12 | /
-| 13 | ^
+| 0 |
+| 1 | .
+| 2 | o
+| 3 | +
+| 4 | =
+| 5 | *
+| 6 | B
+| 7 | O
+| 8 | X
+| 9 | @
+| 10 | %
+| 11 | &
+| 12 | #
+| 13 | /
+| 14 | ^
+| above 14 | ^
 |===
 
 Starting Point marked as `S`.
