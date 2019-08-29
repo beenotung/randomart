@@ -65,8 +65,8 @@ int(C) when $a =< C, C =< $f ->
 }).
 -define(NEW_LINE, 10).
 
-from_rc(Row, Col) ->
-  erlang:round(Row * ?N_COL + Col).
+from_rc(Row, Col) when is_integer(Row), is_integer(Col) ->
+  Row * ?N_COL + Col.
 
 to_rc(Point) ->
   Row = Point div ?N_COL,
@@ -78,8 +78,28 @@ rc_test() ->
   [Row, Col] = to_rc(Point),
   Point = from_rc(Row, Col).
 
+random_rc_test() ->
+  Size = ?N_COL * ?N_ROW,
+  Point = rand:uniform(Size),
+  [Row, Col] = to_rc(Point),
+  PointRes = from_rc(Row, Col),
+  if PointRes == Point -> ok;
+    true ->
+      io:format("~p~n", [#{
+        n_row => ?N_ROW
+        , n_col => ?N_COL
+        , size => Size
+        , point => Point
+        , row => Row
+        , col => Col
+        , pointRes => PointRes
+      }])
+  end.
+
 init() ->
-  Center = from_rc((?N_ROW - 1) / 2, (?N_COL - 1) / 2),
+  Row = erlang:round((?N_ROW - 1) / 2),
+  Col = erlang:round((?N_COL - 1) / 2),
+  Center = from_rc(Row, Col),
   Cells = array:new([
     {fixed, true}
     , {default, 0}
